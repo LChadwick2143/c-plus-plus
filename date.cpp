@@ -11,7 +11,6 @@ class Date
         month = m;
         day = d;
     }
-    ~Date(){}
     int GetYear()
     {
         cout << "year " << year << endl;

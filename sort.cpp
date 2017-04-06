@@ -10,7 +10,6 @@ class student
         num = 0;
         score = 0;
     }
-    ~student(){};
     void setdata(int i, int j)
     {
         num = i;
