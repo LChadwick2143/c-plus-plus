@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <cctype>
 using namespace std;
 class counter
@@ -11,12 +11,12 @@ class counter
     {
         num = 0;
     }
-    void countWords(char *s)
+    void countWords(string s)
     {
-        if(*s)
+        if(s != "")
         {
             num = 1;
-            for(int i = 0; i < strlen(s); i++)
+            for(int i = 0; i < s.length(); i++)
                 if(isspace(s[i]))
                     num++;
         }
@@ -28,8 +28,8 @@ class counter
 };
 int main()
 {
-    char sentence[100];
-    cin.getline(sentence, 100);
+    string sentence;
+    getline(cin, sentence);
     counter counter;
     counter.countWords(sentence);
     counter.show();

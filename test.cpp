@@ -1,61 +1,15 @@
 #include <iostream>
+#include <string>
 using namespace std;
-class student
-{
-    int num, score;
-    
-    public:
-    student()
-    {
-        num = 0;
-        score = 0;
-    }
-    ~student(){};
-    void setdata(int i, int j)
-    {
-        num = i;
-        score = j;
-    }
-    void display()
-    {
-        cout << "学号:" << num << "  "<< "成绩:" << score << endl;
-    }
-    
-    friend void sorted(student a[], int n);
-};
-void sorted(student a[], int n)
-{
-    int p;
-    student m;
-    for(int i = 0; i < n - 1; i++)
-    {
-        p = i;
-        for(int j = i + 1; j < n; j++)
-            if(a[p].score < a[j].score)
-                p = j;
-        if(p != i)
-        {
-            m = a[p];
-            a[p] = a[i];
-            a[i] = m;
-        }
-    }
-}
 int main()
 {
-    int n, i, num, score;
-    cin >> n;
-    student s[n];
-    for(i = 0; i < n; i++)
-    {
-        cin >> num >> score;
-        s[i].setdata(num, score);
-    }
-    sorted(s, n);
-    for(i = 0; i < n; i++)
-    {
-        s[i].display();
-    }
+    string yourname, myname;
+    int length;
+    getline(cin, yourname);
+    getline(cin, myname);
+    cout << "before swap, yourname is: " << yourname << " and myname is: " << myname << endl;
+    swap(yourname, myname);
+    cout << "after swap, yourname is: " << yourname << " and myname is: " << myname << endl;
     
     return 0;
 }
