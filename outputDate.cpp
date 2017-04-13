@@ -6,7 +6,7 @@ class date
     
     public:
     date(int y, int m, int d):year(y), month(m), day(d){}
-    friend ostream & operator <<(ostream & output, date & obj)
+    friend ostream & operator << (ostream & output, date & obj)
     {
         cout << obj.year << "-" << obj.month << "-" << obj.day;
         return output;
